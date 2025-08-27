@@ -1,9 +1,9 @@
-# --- Base PHP 8.2 ---
 FROM php:8.2-cli
 
 # Dependencias del sistema y extensiones necesarias
 RUN apt-get update && apt-get install -y \
-    git unzip libzip-dev libonig-dev libpng-dev libxml2-dev sqlite3 \
+    git unzip pkg-config libzip-dev libpng-dev libxml2-dev \
+    sqlite3 libsqlite3-dev \
  && docker-php-ext-install pdo pdo_mysql pdo_sqlite zip
 
 # Composer desde la imagen oficial
